@@ -1,12 +1,14 @@
 import { Component } from 'react';
+import PropTypes from 'prop-types';
 
 class Card extends Component {
   render() {
-    const { cardName, cardImage, cardDescription,
-      cardAttr1, cardAttr2, cardAttr3, cardRare, cardTrunfo
+    const { cardName, cardDescription,
+      cardAttr1, cardAttr2, cardAttr3, cardRare, cardTrunfo,
     } = this.props;
     return (
       <div>
+        <h1>card</h1>
         <p data-testid="name-card">{ cardName }</p>
         <img data-testid="image-card" src={ cardImage } alt={ cardName } />
         <p data-testid="description-card">{ cardDescription }</p>
@@ -19,5 +21,16 @@ class Card extends Component {
     );
   }
 }
+
+Card.propTypes = {
+  cardName: PropTypes.string.isRequired,
+  cardDescription: PropTypes.string.isRequired,
+  cardAttr1: PropTypes.string.isRequired,
+  cardAttr2: PropTypes.string.isRequired,
+  cardAttr3: PropTypes.string.isRequired,
+  cardRare: PropTypes.string.isRequired,
+  cardTrunfo: PropTypes.bool.isRequired,
+
+};
 
 export default Card;

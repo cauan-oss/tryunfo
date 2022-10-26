@@ -1,11 +1,12 @@
 const { Component } = require('react');
 
 class Form extends Component {
+
   render() {
     const { cardName, cardDescription, cardAttr1,
       cardAttr2, cardAttr3, cardImage,
       cardRare, cardTrunfo, isSaveButtonDisabled,
-      onInputChange, onSaveButtonClick } = this.props;
+      onInputChange, onSaveButtonClick,  } = this.props;
     return (
       <div>
         <label htmlFor="nome-carta">
@@ -13,6 +14,7 @@ class Form extends Component {
           <input
             id="nome-carta"
             data-testid="name-input"
+            name="cardName"
             value={ cardName }
             onChange={ onInputChange }
             type="text"

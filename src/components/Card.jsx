@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 class Card extends Component {
   render() {
-    const { cardName, cardDescription,
+    const { cardName, cardImage, cardDescription,
       cardAttr1, cardAttr2, cardAttr3, cardRare, cardTrunfo,
     } = this.props;
     return (
@@ -24,6 +24,7 @@ class Card extends Component {
 
 Card.propTypes = {
   cardName: PropTypes.string.isRequired,
+  cardImage: PropTypes.string.isRequired,
   cardDescription: PropTypes.string.isRequired,
   cardAttr1: PropTypes.string.isRequired,
   cardAttr2: PropTypes.string.isRequired,

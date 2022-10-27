@@ -81,6 +81,7 @@ class Form extends Component {
           <select
             data-testid="rare-input"
             value={ cardRare }
+            name="cardRare"
             onChange={ onInputChange }
           >
             <option value="normal">normal</option>
@@ -88,7 +89,7 @@ class Form extends Component {
             <option value="muito raro">muito raro</option>
           </select>
         </label>
-        <label htmlFor="entarda-img">
+        <label htmlFor="entrada-img">
           Super trybe trunfo
           <input
             checked={ cardTrunfo }

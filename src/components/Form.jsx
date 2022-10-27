@@ -27,6 +27,7 @@ class Form extends Component {
             id="descricao-carta"
             type="textarea"
             data-testid="description-input"
+            name="cardDescription"
             value={ cardDescription }
             onChange={ onInputChange }
           />
@@ -37,6 +38,7 @@ class Form extends Component {
             id="atributo-carta1"
             type="number"
             data-testid="attr1-input"
+            name="cardAttr1"
             value={ cardAttr1 }
             onChange={ onInputChange }
           />
@@ -47,6 +49,7 @@ class Form extends Component {
             id="atributo-carta2"
             type="number"
             data-testid="attr2-input"
+            name="cardAttr2"
             value={ cardAttr2 }
             onChange={ onInputChange }
           />
@@ -57,6 +60,7 @@ class Form extends Component {
             id="atributo-carta3"
             type="number"
             data-testid="attr3-input"
+            name="cardAttr3"
             value={ cardAttr3 }
             onChange={ onInputChange }
           />
@@ -68,6 +72,7 @@ class Form extends Component {
             type="text"
             data-testid="image-input"
             value={ cardImage }
+            name="cardImage"
             onChange={ onInputChange }
           />
         </label>

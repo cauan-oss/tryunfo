@@ -79,7 +79,8 @@ class App extends React.Component {
 
   render() {
     const { cardName, cardImage, cardRare, cardDescription,
-      cardAttr1, cardAttr2, cardAttr3, cardTrunfo, isSaveButtonDisabled } = this.state;
+      cardAttr1, cardAttr2, cardAttr3,
+      cardTrunfo, isSaveButtonDisabled, meuArray } = this.state;
 
     return (
       <div>
@@ -107,6 +108,19 @@ class App extends React.Component {
           cardTrunfo={ cardTrunfo }
           cardRare={ cardRare }
         />
+        {meuArray.map((card) => (
+          <Card
+            key={ cardName }
+            cardName={ card.cardName }
+            cardImage={ card.cardImage }
+            cardDescription={ card.cardDescription }
+            cardAttr1={ card.cardAttr1 }
+            cardAttr2={ card.cardAttr2 }
+            cardAttr3={ card.cardAttr3 }
+            cardTrunfo={ card.cardTrunfo }
+            cardRare={ card.cardRare }
+          />
+        ))}
       </div>
     );
   }

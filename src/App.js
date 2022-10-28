@@ -16,7 +16,6 @@ class App extends React.Component {
       cardTrunfo: false,
       isSaveButtonDisabled: true,
       meuArray: [],
-      hasTrunfo: false,
     };
   }
 
@@ -25,7 +24,7 @@ class App extends React.Component {
       [event.target.name]: event.target.name === 'cardTrunfo'
         ? event.target.checked : event.target.value,
     }, () => {
-      const { cardName, cardImage, cardRare,
+      const { cardName, cardImage,
         cardDescription, cardAttr1, cardAttr2, cardAttr3 } = this.state;
 
       const emptyValidate = cardName.length > 0

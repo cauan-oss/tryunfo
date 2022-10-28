@@ -106,6 +106,7 @@ class App extends React.Component {
           cardAttr3={ cardAttr3 }
           cardTrunfo={ cardTrunfo }
           cardRare={ cardRare }
+          deleteButton={ this.onSaveButtonClick }
         />
         {meuArray.map((card) => (
           <Card

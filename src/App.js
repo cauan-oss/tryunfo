@@ -1,5 +1,4 @@
 import React from 'react';
-import { array } from 'prop-types';
 import Form from './components/Form';
 import Card from './components/Card';
 
@@ -14,15 +13,17 @@ class App extends React.Component {
       cardAttr1: 0,
       cardAttr2: 0,
       cardAttr3: 0,
-      cardTrunfo: true,
+      cardTrunfo: false,
       isSaveButtonDisabled: true,
       meuArray: [],
+      hasTrunfo: false,
     };
   }
 
   onInputChange = (event) => {
     this.setState({
-      [event.target.name]: event.target.value,
+      [event.target.name]: event.target.name === 'cardTrunfo'
+        ? event.target.checked : event.target.value,
     }, () => {
       const { cardName, cardImage, cardRare,
         cardDescription, cardAttr1, cardAttr2, cardAttr3 } = this.state;
@@ -40,7 +41,6 @@ class App extends React.Component {
       const compara = card1 <= valueMaxTwo && card2 <= valueMaxTwo
       && card3 <= valueMaxTwo;
       const comparaTwo = card1 >= zero && card2 >= zero && card3 >= zero;
-      console.log(comparaTwo);
       const isvalid = emptyValidate && sumValue && compara && comparaTwo;
       this.setState({
         isSaveButtonDisabled: !isvalid,
@@ -49,11 +49,6 @@ class App extends React.Component {
   };
 
   onSaveButtonClick = () => {
-  // criar objeto carta com o valores do estado
-  // colocar os objetos dentro do meu array que esta no estado
-  // voltar os estado original quando clicar no botao salvar
-  // como adicionar elemento em um estado de arra react class componente
-  // spread
     const { cardName, cardImage, cardRare, cardDescription,
       cardAttr1, cardAttr2, cardAttr3, cardTrunfo } = this.state;
     const meuObj = {
@@ -76,7 +71,9 @@ class App extends React.Component {
         cardDescription: '',
         cardAttr1: 0,
         cardAttr2: 0,
-        cardAttr3: 0 };
+        cardAttr3: 0,
+        hasTrunfo: cardTrunfo,
+      };
     });
   };
 

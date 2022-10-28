@@ -91,13 +91,17 @@ class Form extends Component {
         </label>
         <label htmlFor="entrada-img">
           Super trybe trunfo
-          <input
+          { cardTrunfo ? <p data-testid="trunfo-card">
+          Você já tem um Super Trunfo em seu baralho 
+          </p> : <input
             checked={ cardTrunfo }
             onChange={ onInputChange }
+            name="cardTrunfo"
             id="entrada-img"
             type="checkbox"
             data-testid="trunfo-input"
-          />
+          /> }
+
         </label>
         <button
           disabled={ isSaveButtonDisabled }

@@ -1,4 +1,5 @@
 import React from 'react';
+import { array } from 'prop-types';
 import Form from './components/Form';
 import Card from './components/Card';
 
@@ -15,6 +16,7 @@ class App extends React.Component {
       cardAttr3: 0,
       cardTrunfo: true,
       isSaveButtonDisabled: true,
+      meuArray: [],
     };
   }
 
@@ -46,6 +48,38 @@ class App extends React.Component {
     });
   };
 
+  onSaveButtonClick = () => {
+  // criar objeto carta com o valores do estado
+  // colocar os objetos dentro do meu array que esta no estado
+  // voltar os estado original quando clicar no botao salvar
+  // como adicionar elemento em um estado de arra react class componente
+  // spread
+    const { cardName, cardImage, cardRare, cardDescription,
+      cardAttr1, cardAttr2, cardAttr3, cardTrunfo } = this.state;
+    const meuObj = {
+      cardName,
+      cardImage,
+      cardRare,
+      cardDescription,
+      cardAttr1,
+      cardAttr2,
+      cardAttr3,
+      cardTrunfo,
+    };
+
+    this.setState((prevstate) => {
+      const meuArray = [...prevstate.meuArray, meuObj];
+      return { meuArray,
+        cardName: '',
+        cardImage: '',
+        cardRare: 'normal',
+        cardDescription: '',
+        cardAttr1: 0,
+        cardAttr2: 0,
+        cardAttr3: 0 };
+    });
+  };
+
   render() {
     const { cardName, cardImage, cardRare, cardDescription,
       cardAttr1, cardAttr2, cardAttr3, cardTrunfo, isSaveButtonDisabled } = this.state;
@@ -64,6 +98,7 @@ class App extends React.Component {
           cardRare={ cardRare }
           onInputChange={ this.onInputChange }
           isSaveButtonDisabled={ isSaveButtonDisabled }
+          onSaveButtonClick={ this.onSaveButtonClick }
         />
         <Card
           cardName={ cardName }

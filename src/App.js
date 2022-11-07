@@ -16,6 +16,7 @@ class App extends React.Component {
       cardTrunfo: false,
       isSaveButtonDisabled: true,
       meuArray: [],
+      hasTrunfo: false,
     };
   }
 
@@ -79,7 +80,7 @@ class App extends React.Component {
   render() {
     const { cardName, cardImage, cardRare, cardDescription,
       cardAttr1, cardAttr2, cardAttr3,
-      cardTrunfo, isSaveButtonDisabled, meuArray } = this.state;
+      cardTrunfo, isSaveButtonDisabled, meuArray, hasTrunfo } = this.state;
 
     return (
       <div>
@@ -98,6 +99,7 @@ class App extends React.Component {
           onInputChange={ this.onInputChange }
           isSaveButtonDisabled={ isSaveButtonDisabled }
           onSaveButtonClick={ this.onSaveButtonClick }
+          hasTrunfo={ hasTrunfo }
         />
         <Card
           cardName={ cardName }
